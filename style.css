@@ -1,0 +1,298 @@
+
+   
+   
+   body {
+      margin: 0;
+      font-family: 'Comfortaa', sans-serif;
+      color: antiquewhite;
+      background: rgb(26, 37, 37);
+      overflow-x: hidden;
+    }
+    
+    section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 400px;
+      padding: 100px 20vw;
+    }
+
+    .blue{
+      background: rgb(111, 111, 204);
+    }
+
+    .red {
+      background: rgb(230, 113, 113);
+    }
+
+    .green {
+      background: rgb(93, 139, 93);
+    }
+
+    .purple{
+      background: rgb(124, 44, 235);
+    }
+
+    .wave1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave1 svg {
+    position: relative;
+    display: block;
+    width: calc(130% + 1.3px);
+    height: 295px;
+}
+
+.wave1 .shape-fill {
+    fill: rgb(26, 37, 37);
+}
+
+.wave2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave2 svg {
+    position: relative;
+    display: block;
+    width: calc(105% + 1.3px);
+    height: 184px;
+}
+
+.wave2 .shape-fill {
+    fill: rgb(160, 113, 255);
+}
+
+.wave3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave3 svg {
+    position: relative;
+    display: block;
+    width: calc(105% + 1.3px);
+    height: 184px;
+}
+
+.wave3 .shape-fill {
+    fill: rgb(26, 37, 37);
+}
+
+.wrapper {
+  width: 500px;  
+}
+
+.fontsize {
+  font-size: 50px;
+}
+
+.hover-box {
+  perspective: 1000px;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  box-shadow: 0 0 30px rgb(0, 0, 0);
+}
+
+.hover-box:hover .box {
+  transform: rotateX(20deg) rotateY(30deg) translateZ(50px);
+}
+
+/*
+// pure css example of wave (not used in final)
+    .curve {
+      position: absolute;
+      height: 225px;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .curve::before {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 55%;
+        height: 100%;
+        transform: translate(85%, 60.5%);
+        background-color: rgb(26, 37, 37);
+      }
+
+      .curve::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 55%;
+        height: 100%;
+        background-color: rgb(111, 111, 204);
+        transform: translate(-3.7%, 40%);
+        z-index: -1;
+      }
+*/
+
+nav {
+    background-color: rgba(51,51,51,0.5); 
+    border-top: 2px solid rgb(159, 98, 220); 
+    border-bottom: 2px solid rgb(159, 98, 220);
+    overflow: hidden;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    float: left;
+  }
+  
+  nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 28px 32px;
+    text-decoration: none;
+  }
+  
+  nav li a:hover {
+    background-color: #111;
+  }
+
+
+  body{
+    overflow-y: hidden;
+  }
+
+  .trim
+    {
+    max-height:1600px;
+     max-width:1200px;
+     overflow: hidden;
+    }
+  
+  .container{
+    width: 25%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 3vh;
+    position: relative;    
+  }
+  
+  .image{
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  #prev{  
+    position: absolute;
+    top: 43%;
+    left: 0;
+    cursor: pointer;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  #next{
+    position: absolute;
+    top: 43%;
+    right: 0;
+    cursor: pointer;
+    padding: 16px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  #prev:hover, #next:hover {
+    background: rgba(0, 0, 0, 0.5);
+  } 
+  
+  .dots{
+    text-align: center;
+    margin-top: 2%;
+  }
+  
+  .dot{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    /* transition from one do to the next */
+    transition: background-color 0.6s ease;
+  }
+  
+  /* We create this class with JavaScript. It makes the current dot darker gray */
+  .active{
+    background-color: #717171;
+  } 
+  
+  /* create fade animation when switching between images */
+  .fade{
+  /* Animation support for different browsers */
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+  }
+  
+  @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+  } 
+  
+  @media(max-width:768px){
+      .container{
+          width: 70%;
+      }
+  }
+  
+  
